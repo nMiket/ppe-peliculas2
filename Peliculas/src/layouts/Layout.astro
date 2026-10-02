@@ -1,0 +1,35 @@
+---
+interface Props {
+	title?: string;
+}
+
+const { title = 'MovieRadar' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		min-height: 100%;
+		background: #f5f6f4;
+		color: #1f2933;
+		font-family: 'DM Sans', sans-serif;
+	}
+
+	body {
+		min-height: 100vh;
+	}
+</style>
